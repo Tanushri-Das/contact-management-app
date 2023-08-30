@@ -1,35 +1,41 @@
 
-import { ADD_CONTACT, EDIT_CONTACT, REMOVE_CONTACT, VIEW_CONTACT } from './actionTypes';
-import { toast } from 'react-toastify';
+import { ADD_CONTACT, EDIT_CONTACT, REMOVE_CONTACT, VIEW_CONTACT } from './actionTypes'; // Importing action type constants
+import { toast } from 'react-toastify'; // Importing toast for displaying notifications
 
+// Initial state for the Redux store
 const initialState = {
-  contacts: JSON.parse(localStorage.getItem("contacts")) || [],
-  selectedContactId: null, // Initialize as null
+  contacts: JSON.parse(localStorage.getItem("contacts")) || [], // Initializing contacts from localStorage or an empty array
+  selectedContactId: null, // Initialize selected contact ID as null
 };
 
+// Redux reducer function
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_CONTACT: {
       let flag = 0;
+
+      // Validating input for adding a new contact
       if (
         action.payload.first_name === "" ||
         action.payload.last_name === ""
       ) {
-        toast.error('Ohh! You Missed Required Input, Please fill');
+        toast.error('Ohh! You Missed Required Input, Please fill'); // Display an error notification
         flag = 1;
       } else {
+        // Checking for duplicate contact names
         state.contacts.forEach((el) => {
           if (
             el.first_name === action.payload.first_name &&
             el.last_name === action.payload.last_name
           ) {
-            toast.error('Name Already Exists In Contact');
+            toast.error('Name Already Exists In Contact'); // Display an error notification
             flag = 1;
           }
         });
       }
 
       if (!flag) {
+        // Adding a new contact if validation passes
         let updatedContacts =
           JSON.parse(localStorage.getItem("contacts")) || [];
         updatedContacts.push({
@@ -45,10 +51,11 @@ export default function reducer(state = initialState, action) {
     }
 
     case REMOVE_CONTACT: {
+      // Removing a contact
       let Contacts = JSON.parse(localStorage.getItem("contacts"));
       let updatedContacts = Contacts.filter((el) => el.id !== action.payload.id);
       localStorage.setItem("contacts", JSON.stringify(updatedContacts));
-      toast.success('Contact Removed Successfully');
+      toast.success('Contact Removed Successfully'); // Display a success notification
       return {
         ...state,
         contacts: [...updatedContacts],
@@ -60,19 +67,20 @@ export default function reducer(state = initialState, action) {
         action.payload.first_name === "" ||
         action.payload.last_name === ""
       ) {
-        toast.error('Input Fields Cannot Be Left Empty');
+        toast.error('Input Fields Cannot Be Left Empty'); // Display an error notification
         return state;
       } else {
         let flag = 0;
         let Contacts = JSON.parse(localStorage.getItem("contacts"));
 
+        // Validating input for editing a contact
         Contacts.forEach((el) => {
           if (
             el.id !== action.payload.id &&
             el.first_name === action.payload.first_name &&
             el.last_name === action.payload.last_name
           ) {
-            toast.error('Name Already Exists!!');
+            toast.error('Name Already Exists!!'); // Display an error notification
             flag = 1;
             return state;
           }
@@ -81,6 +89,7 @@ export default function reducer(state = initialState, action) {
         if (flag) {
           return state;
         } else {
+          // Updating a contact if validation passes
           let updatedContacts = Contacts.map((el) => {
             if (el.id === action.payload.id) {
               return { ...action.payload };
@@ -89,7 +98,7 @@ export default function reducer(state = initialState, action) {
             }
           });
           localStorage.setItem("contacts", JSON.stringify(updatedContacts));
-          toast.success('Contact has been Updated');
+          toast.success('Contact has been Updated'); // Display a success notification
           return {
             ...state,
             contacts: updatedContacts,
@@ -99,6 +108,7 @@ export default function reducer(state = initialState, action) {
     }
 
     case VIEW_CONTACT: {
+      // Viewing a specific contact
       return {
         ...state,
         selectedContactId: action.payload,
