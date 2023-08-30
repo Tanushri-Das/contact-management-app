@@ -35,34 +35,7 @@ The app uses the following APIs to fetch data:
 # Installation and Setup
 ## To run this app, follow these steps:
 
-- Clone this repository: git clone https://github.com/your-username/contact-management-app.git
+- Clone this repository: git clone https://github.com/Tanushri-Das/contact-management-app
 - Install the dependencies: npm install
 - Start the app: npm start
 - The app should open in your default browser at http://localhost:3000/.
-
-# Screenshots 
-
-## Contact Page :-
-
-<img src="../contact-management-app/ScreenShots/Contact_Page.jpeg"/>
-
-</br>
-<img src="../contact-management-app/ScreenShots/Contact_Page_2.jpeg"/>
-
-</br>
-<img src="../contact-management-app/ScreenShots/Contact_Details.jpeg"/>
-
-</br>
-<img src="../contact-management-app/ScreenShots/Contact_form.jpeg"/>
-
-</br>
-
-
-## Charts And Maps Page :-
-
-<img src="../contact-management-app/ScreenShots/Chart_And_Maps_1.jpeg"/>
-
-</br>
-<img src="../contact-management-app/ScreenShots//Charts_and_Map_2.jpeg"/>
-
-</br>
