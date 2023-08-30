@@ -66,7 +66,3 @@ The app uses the following APIs to fetch data:
 <img src="../contact-management-app/ScreenShots//Charts_and_Map_2.jpeg"/>
 
 </br>
-
-
-
-
