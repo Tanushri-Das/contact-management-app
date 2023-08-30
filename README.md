@@ -2,14 +2,14 @@
 This is a contact management app built using ReactJS, JavaScript, TailwindCSS, React Router v6, React Query and Redux. 
 The app includes a dashboard with charts and maps that display COVID-19 data for different countries.
 
-# Deployed Link : - 
+# Livesite Link : - 
 https://64eef99f217e9e5240efcf3c--zingy-haupia-ffd7d4.netlify.app/
 
 # Pages and Functionality
 ## The app has two main pages:
 
 # Contacts
-This page allows you to manage your contacts. You can add a new contact by filling out the form, and the contact will be added to the list. You can also edit or delete an existing contact. Clicking on a contact's name will take you to the contact details page.
+This page allows you to manage your contacts. You can add a new contact by filling out the form, and the contact will be added to the list. You can also view, edit or delete an existing contact. Clicking on a contact's name will take you to the contact details page.
 
 # Charts and Maps
 This page displays COVID-19 data for different countries. It includes a line graph showing the cases fluctuations over 
