@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
@@ -63,19 +64,19 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="  w-full pt-20 px-4 pb-8">
-      <h1 className="text-4xl font-bold mb-4 text-pink-600">
+    <div className="  w-full pt-28 px-4 pb-8">
+      <h1 className="text-xl md:text-2xl xl:text-4xl font-bold mb-4 text-black">
         Corona Cases Chart
       </h1>
       <div className="border-2 border-red-100 w-11/12  m-auto 10 auto 10">
         {chartData.datasets ? (
           <Line data={chartData} />
         ) : (
-          <h1 className="text-pink-600 mb-4 font-bold text-2xl">Loading...</h1>
+          <h1 className="text-black mb-4 font-bold text-2xl">Loading...</h1>
         )}
       </div>
 
-      <h1 className="text-4xl font-bold mb-4 mt-4 text-blue-500">
+      <h1 className="text-xl md:text-2xl xl:text-4xl font-bold mb-6 mt-10 text-black">
         Corona Cases World Map
       </h1>
       <div className="border-2 border-blue-500 w-11/12  m-auto 5 auto 5">

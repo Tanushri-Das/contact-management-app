@@ -45,10 +45,10 @@ function EditContact() {
 
   return (
     <div className="w-full md:w-3/4 lg:w-1/2 mx-auto my-4 px-2 py-2 md:px-0 md:py-0 pt-16">
-      <h2 className="text-2xl font-bold mb-4">Edit Contact</h2>
-      <div className="shadow-lg p-8 border">
+      <h2 className="text-xl md:text-2xl font-bold my-8 md:mt-36">Edit Contact</h2>
+      <div className="shadow-lg p-8 border rounded-lg">
         <div className="mb-4">
-          <label className="block font-bold mb-2" htmlFor="first-name">
+          <label className="block font-bold mb-2 text-start text-lg" htmlFor="first-name">
             First Name
           </label>
           <input
@@ -61,7 +61,7 @@ function EditContact() {
           />
         </div>
         <div className="mb-4">
-          <label className="block font-bold mb-2" htmlFor="last-name">
+          <label className="block font-bold mb-2 text-start text-lg" htmlFor="last-name">
             Last Name
           </label>
           <input
@@ -75,7 +75,7 @@ function EditContact() {
         </div>
 
         <div className="mb-4">
-          <label className="block font-bold mb-2">Status</label>
+          <label className="block font-bold mb-2 text-start text-lg">Status</label>
           <div className="text-start">
             <label className="inline-flex items-center">
               <input

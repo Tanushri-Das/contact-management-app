@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import Contacts from "./Contacts";
-import Dashboard from "./Charts_and_Maps";
 import EditContact from "../Components/Edit_Contact";
 import ContactForm from "../Components/ContactForm";
 import View_Contact from "../Components/View_Contact";
-const AllRoutes = () => {
+import Contacts from "../Pages/Contacts";
+import Dashboard from "../Pages/Charts_and_Maps";
+
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Contacts />} />
@@ -16,4 +17,4 @@ const AllRoutes = () => {
   );
 };
 
-export default AllRoutes;
+export default Router;

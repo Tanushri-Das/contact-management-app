@@ -31,7 +31,7 @@ function ContactForm() {
   return (
     <div className="w-full md:w-3/4 lg:w-1/2 mx-auto my-4 px-2 py-2 md:px-0 md:py-0 pt-16">
       <h2 className="text-xl md:text-2xl font-bold my-8 md:mt-36">Create Contact</h2>
-      <div className="shadow-lg border p-4 md:p-8">
+      <div className="shadow-lg rounded-lg p-4 md:p-8">
         <div className="mb-4">
           <label className="block font-bold mb-2 text-start text-lg" htmlFor="first-name">
             First Name
